@@ -28,7 +28,7 @@ public class MigrationHostedService<TDbContext> : IHostedService
 
             await using var scope = _scopeFactory.CreateAsyncScope();
             var context = scope.ServiceProvider.GetRequiredService<TDbContext>();
-            await context.Database.MigrateAsync(cancellationToken);
+            //await context.Database.MigrateAsync(cancellationToken);
 
             _logger.LogInformation("Migrations complete for {DbContext}", typeof(TDbContext).Name);
         }
