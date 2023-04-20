@@ -3,9 +3,12 @@ namespace TappManagement.Domain.Users.Services;
 using TappManagement.Domain.Users;
 using TappManagement.Databases;
 using TappManagement.Services;
+using Ardalis.Specification;
+using Microsoft.EntityFrameworkCore;
 
 public interface IUserRepository : IGenericRepository<User>
 {
+    public Task<bool> UserExists(string name, CancellationToken cancellationToken = default);
 }
 
 public sealed class UserRepository : GenericRepository<User>, IUserRepository
@@ -16,4 +19,11 @@ public sealed class UserRepository : GenericRepository<User>, IUserRepository
     {
         _dbContext = dbContext;
     }
+
+    public async Task<bool> UserExists(string name, CancellationToken cancellationToken = default)
+    {
+        return await _dbContext.Set<User>()
+            .AnyAsync(e => e.Name == name, cancellationToken);
+    }
 }
+        

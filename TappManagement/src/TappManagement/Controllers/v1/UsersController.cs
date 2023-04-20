@@ -65,12 +65,11 @@ public sealed class UsersController: ControllerBase
         return Ok(queryResponse);
     }
 
-
     /// <summary>
     /// Creates a new User record.
     /// </summary>
     [HttpPost(Name = "AddUser")]
-    public async Task<ActionResult<UserDto>> AddUser([FromBody]UserForCreationDto userForCreation)
+    public async Task<ActionResult<UserDto>> AddUser([FromBody] UserForCreationDto userForCreation)
     {
         var command = new AddUser.Command(userForCreation);
         var commandResponse = await _mediator.Send(command);
@@ -104,6 +103,26 @@ public sealed class UsersController: ControllerBase
         await _mediator.Send(command);
 
         return NoContent();
+    }
+
+
+    /// <summary>
+    /// Check user exist.
+    /// </summary>
+    [HttpPost("CheckUserExist")]
+    public async Task<ActionResult<bool>> CheckUserExist([FromBody] UserExistDTO userExistDTO)
+    {
+        try
+        {
+            var command = new UserExistLogic.Command(userExistDTO);
+            var commandResponse = await _mediator.Send(command);
+            return new ObjectResult(commandResponse);
+        }
+        catch (Exception ex)
+        {
+            string exceptionTest = ex.ToString();
+            return null;
+        }
     }
 
     // endpoint marker - do not delete this comment

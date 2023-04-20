@@ -6,6 +6,7 @@ using TappManagement.Domain;
 using TappManagement.Databases;
 using SharedKernel.Exceptions;
 using Microsoft.EntityFrameworkCore;
+using System.Threading;
 
 public interface IGenericRepository<TEntity> : ITappManagementScopedService
     where TEntity : BaseEntity

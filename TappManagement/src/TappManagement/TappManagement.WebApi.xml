@@ -79,6 +79,11 @@
             Deletes an existing User record.
             </summary>
         </member>
+        <member name="M:TappManagement.Controllers.v1.UsersController.CheckUserExist(TappManagement.Domain.Users.Dtos.UserExistDTO)">
+            <summary>
+            Check user exist.
+            </summary>
+        </member>
         <member name="M:TappManagement.Databases.EntityConfigurations.AdminConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{TappManagement.Domain.Admins.Admin})">
             <summary>
             The database configuration for Admins. 
