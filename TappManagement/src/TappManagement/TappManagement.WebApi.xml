@@ -1,0 +1,115 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>TappManagement</name>
+    </assembly>
+    <members>
+        <member name="M:TappManagement.Controllers.v1.AppointmentsController.GetAppointments(TappManagement.Domain.Appointments.Dtos.AppointmentParametersDto)">
+            <summary>
+            Gets a list of all Appointments.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.AppointmentsController.GetAppointment(System.Guid)">
+            <summary>
+            Gets a single Appointment by ID.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.AppointmentsController.AddAppointment(TappManagement.Domain.Appointments.Dtos.AppointmentForCreationDto)">
+            <summary>
+            Creates a new Appointment record.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.AppointmentsController.UpdateAppointment(System.Guid,TappManagement.Domain.Appointments.Dtos.AppointmentForUpdateDto)">
+            <summary>
+            Updates an entire existing Appointment.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.AppointmentsController.DeleteAppointment(System.Guid)">
+            <summary>
+            Deletes an existing Appointment record.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.UsersController.GetUsers(TappManagement.Domain.Users.Dtos.UserParametersDto)">
+            <summary>
+            Gets a list of all Users.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.UsersController.GetUser(System.Guid)">
+            <summary>
+            Gets a single User by ID.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.UsersController.AddUser(TappManagement.Domain.Users.Dtos.UserForCreationDto)">
+            <summary>
+            Creates a new User record.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.UsersController.UpdateUser(System.Guid,TappManagement.Domain.Users.Dtos.UserForUpdateDto)">
+            <summary>
+            Updates an entire existing User.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.UsersController.DeleteUser(System.Guid)">
+            <summary>
+            Deletes an existing User record.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Databases.EntityConfigurations.AppointmentConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{TappManagement.Domain.Appointments.Appointment})">
+            <summary>
+            The database configuration for Appointments. 
+            </summary>
+        </member>
+        <member name="M:TappManagement.Databases.EntityConfigurations.UserConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{TappManagement.Domain.Users.User})">
+            <summary>
+            The database configuration for Users. 
+            </summary>
+        </member>
+        <member name="P:TappManagement.Domain.Addresses.Address.Line1">
+            <summary>
+            Address line 1 (e.g., street, PO Box, or company name).
+            </summary>
+        </member>
+        <member name="P:TappManagement.Domain.Addresses.Address.Line2">
+            <summary>
+            Address line 2 (e.g., apartment, suite, unit, or building).
+            </summary>
+        </member>
+        <member name="P:TappManagement.Domain.Addresses.Address.City">
+            <summary>
+            City, district, suburb, town, or village.
+            </summary>
+        </member>
+        <member name="P:TappManagement.Domain.Addresses.Address.State">
+            <summary>
+            State, county, province, or region.
+            </summary>
+        </member>
+        <member name="P:TappManagement.Domain.Addresses.Address.PostalCode">
+            <summary>
+            ZIP or postal code.
+            </summary>
+        </member>
+        <member name="P:TappManagement.Domain.Addresses.Address.Country">
+            <summary>
+            Two-letter country code <a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">(ISO 3166-1 alpha-2)</a>.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Extensions.Services.WebAppServiceConfiguration.AddBoundaryServices(Microsoft.Extensions.DependencyInjection.IServiceCollection,System.Reflection.Assembly[])">
+            <summary>
+            Registers all services in the assembly of the given interface.
+            </summary>
+        </member>
+        <member name="T:TappManagement.Migrations.InitialMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:TappManagement.Migrations.InitialMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TappManagement.Migrations.InitialMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TappManagement.Migrations.InitialMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+    </members>
+</doc>

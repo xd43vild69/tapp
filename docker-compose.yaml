@@ -1,0 +1,34 @@
+version: '3.7'
+
+services:
+  tappmanagement-db:
+    image: mcr.microsoft.com/mssql/server
+    restart: always
+    ports:
+      - '50697:1433'
+    environment:
+      - DB_USER=SA
+      - SA_PASSWORD=#localDockerPassword#
+      - DB_CONTAINER_NAME=dev_tappmanagement
+      - ACCEPT_EULA=Y
+    volumes:
+      - tappmanagement-data:/var/lib/sqlserver/data
+
+  jaeger:
+    image: jaegertracing/all-in-one:latest
+#    port mappings: https://www.jaegertracing.io/docs/1.32/getting-started/
+    ports:
+      - "50703:5775/udp"
+      - "50702:6831/udp"
+      - "50704:6832/udp"
+      - "50705:5778"
+      - "50706:16686"
+      - "50707:14250"
+      - "50708:14268"
+      - "50709:14269"
+      - "50710:9411"
+
+        
+volumes:
+  # compose volumes marker - do not delete
+  tappmanagement-data:
