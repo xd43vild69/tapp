@@ -13,7 +13,7 @@ public class FakeAppointmentBuilder
         return this;
     }
     
-    public FakeAppointmentBuilder WithSize(decimal size)
+    public FakeAppointmentBuilder WithSize(int size)
     {
         _creationData.Size = size;
         return this;

@@ -4,6 +4,31 @@
         <name>TappManagement</name>
     </assembly>
     <members>
+        <member name="M:TappManagement.Controllers.v1.AdminsController.GetAdmins(TappManagement.Domain.Admins.Dtos.AdminParametersDto)">
+            <summary>
+            Gets a list of all Admins.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.AdminsController.GetAdmin(System.Guid)">
+            <summary>
+            Gets a single Admin by ID.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.AdminsController.AddAdmin(TappManagement.Domain.Admins.Dtos.AdminForCreationDto)">
+            <summary>
+            Creates a new Admin record.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.AdminsController.UpdateAdmin(System.Guid,TappManagement.Domain.Admins.Dtos.AdminForUpdateDto)">
+            <summary>
+            Updates an entire existing Admin.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.AdminsController.DeleteAdmin(System.Guid)">
+            <summary>
+            Deletes an existing Admin record.
+            </summary>
+        </member>
         <member name="M:TappManagement.Controllers.v1.AppointmentsController.GetAppointments(TappManagement.Domain.Appointments.Dtos.AppointmentParametersDto)">
             <summary>
             Gets a list of all Appointments.
@@ -52,6 +77,11 @@
         <member name="M:TappManagement.Controllers.v1.UsersController.DeleteUser(System.Guid)">
             <summary>
             Deletes an existing User record.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Databases.EntityConfigurations.AdminConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{TappManagement.Domain.Admins.Admin})">
+            <summary>
+            The database configuration for Admins. 
             </summary>
         </member>
         <member name="M:TappManagement.Databases.EntityConfigurations.AppointmentConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{TappManagement.Domain.Appointments.Appointment})">
@@ -109,6 +139,30 @@
             <inheritdoc />
         </member>
         <member name="M:TappManagement.Migrations.InitialMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TappManagement.Migrations.SecondMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:TappManagement.Migrations.SecondMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TappManagement.Migrations.SecondMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TappManagement.Migrations.SecondMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TappManagement.Migrations._3ndMigration">
+            <inheritdoc />
+        </member>
+        <member name="M:TappManagement.Migrations._3ndMigration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TappManagement.Migrations._3ndMigration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TappManagement.Migrations._3ndMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

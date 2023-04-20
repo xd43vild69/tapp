@@ -1,0 +1,19 @@
+Entities:
+  - Name: Admin
+    Features:
+      - Type: GetList
+      - Type: GetRecord
+      - Type: AddRecord
+      - Type: UpdateRecord
+      - Type: DeleteRecord
+    Properties:
+      - Name: Name
+        Type: string
+      - Name: Password
+        Type: string
+      - Name: IsSync
+        Type: bool
+      - Name: UserId
+        Type: Guid
+        ForeignEntityName: User
+        ForeignEntityPlural: Users  

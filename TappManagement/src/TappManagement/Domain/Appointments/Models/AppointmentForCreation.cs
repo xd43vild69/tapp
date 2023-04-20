@@ -2,7 +2,7 @@ namespace TappManagement.Domain.Appointments.Models;
 
 public sealed class AppointmentForCreation
 {
-    public decimal Size { get; set; }
+    public int Size { get; set; }
     public string Location { get; set; }
     public string Description { get; set; }
     public string Reference { get; set; }

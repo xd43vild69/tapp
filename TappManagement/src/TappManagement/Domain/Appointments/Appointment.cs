@@ -15,7 +15,7 @@ using TappManagement.Domain.Users;
 public class Appointment : BaseEntity
 {
     [Sieve(CanFilter = true, CanSort = false)]
-    public decimal Size { get; private set; }
+    public int Size { get; private set; }
 
     [Sieve(CanFilter = true, CanSort = false)]
     public string Location { get; private set; }

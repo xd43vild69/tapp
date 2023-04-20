@@ -3,6 +3,7 @@ namespace TappManagement.Databases;
 using System.Net.Sockets;
 using System.Threading;
 using System.Threading.Tasks;
+using TappManagement.Domain.Admins;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;

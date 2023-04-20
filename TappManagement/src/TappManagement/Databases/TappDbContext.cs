@@ -13,6 +13,7 @@ using System.Linq.Expressions;
 using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Query;
+using TappManagement.Domain.Admins;
 
 public sealed class TappDbContext : DbContext
 {
@@ -35,6 +36,7 @@ public sealed class TappDbContext : DbContext
     #region DbSet Region - Do Not Delete
     public DbSet<User> Users { get; set; }
     public DbSet<Appointment> Appointments { get; set; }
+    public DbSet<Admin> Admins { get; set; }
     #endregion DbSet Region - Do Not Delete
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -43,7 +45,7 @@ public sealed class TappDbContext : DbContext
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(
-                "Server=sqlservertest13.database.windows.net,1433;Database=TappDB;User Id=;Password=;\n");
+                "Server=sqlservertest13.database.windows.net,1433;Database=TappDB;User Id=;Password=;");
             }
         }
     }
@@ -60,6 +62,7 @@ public sealed class TappDbContext : DbContext
         #region Entity Database Config Region - Only delete if you don't want to automatically add configurations
         modelBuilder.ApplyConfiguration(new UserConfiguration());
         modelBuilder.ApplyConfiguration(new AppointmentConfiguration());
+        modelBuilder.ApplyConfiguration(new AdminConfiguration());
         #endregion Entity Database Config Region - Only delete if you don't want to automatically add configurations
     }
 
