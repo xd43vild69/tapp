@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TappManagement.Databases;
 
@@ -11,9 +12,11 @@ using TappManagement.Databases;
 namespace TappManagement.Migrations
 {
     [DbContext(typeof(TappDbContext))]
-    partial class TappDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230423220753_230423Migration")]
+    partial class _230423Migration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -77,9 +80,6 @@ namespace TappManagement.Migrations
                     b.Property<DateTime>("CreatedOn")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid?>("CustomerId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<string>("Description")
                         .HasColumnType("nvarchar(max)");
 
@@ -109,55 +109,9 @@ namespace TappManagement.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("CustomerId");
-
                     b.HasIndex("UserId");
 
                     b.ToTable("Appointments");
-                });
-
-            modelBuilder.Entity("TappManagement.Domain.Customers.Customer", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid?>("AppointmentId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<string>("Cellphone")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("CreatedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime>("CreatedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("IGUser")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<bool>("IsDeleted")
-                        .HasColumnType("bit");
-
-                    b.Property<bool>("IsSync")
-                        .HasColumnType("bit");
-
-                    b.Property<string>("LastModifiedBy")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<DateTime?>("LastModifiedOn")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("Name")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("Password")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Customers");
                 });
 
             modelBuilder.Entity("TappManagement.Domain.Users.User", b =>
@@ -214,10 +168,6 @@ namespace TappManagement.Migrations
 
             modelBuilder.Entity("TappManagement.Domain.Appointments.Appointment", b =>
                 {
-                    b.HasOne("TappManagement.Domain.Customers.Customer", null)
-                        .WithMany("Appointments")
-                        .HasForeignKey("CustomerId");
-
                     b.HasOne("TappManagement.Domain.Users.User", "User")
                         .WithMany("Appointments")
                         .HasForeignKey("UserId")
@@ -225,11 +175,6 @@ namespace TappManagement.Migrations
                         .IsRequired();
 
                     b.Navigation("User");
-                });
-
-            modelBuilder.Entity("TappManagement.Domain.Customers.Customer", b =>
-                {
-                    b.Navigation("Appointments");
                 });
 
             modelBuilder.Entity("TappManagement.Domain.Users.User", b =>

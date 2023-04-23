@@ -1,0 +1,27 @@
+Entities:
+  - Name: Customer
+    Features:
+      - Type: GetList
+      - Type: GetRecord
+      - Type: AddRecord
+      - Type: UpdateRecord
+      - Type: DeleteRecord
+    Properties:
+      - Name: Name
+        Type: string
+      - Name: Password
+        Type: string
+      - Name: IsSync
+        Type: bool    
+      - Name: Cellphone
+        Type: string
+        CanFilter: true
+        CanSort: true
+      - Name: IGUser
+        Type: string
+        CanFilter: true
+        CanSort: true
+      - Name: AppointmentId
+        Type: Guid?
+        ForeignEntityName: ICollection<Appointment> 
+        ForeignEntityPlural: Appointments        

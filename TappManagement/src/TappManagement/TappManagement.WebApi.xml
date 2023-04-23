@@ -54,6 +54,31 @@
             Deletes an existing Appointment record.
             </summary>
         </member>
+        <member name="M:TappManagement.Controllers.v1.CustomersController.GetCustomers(TappManagement.Domain.Customers.Dtos.CustomerParametersDto)">
+            <summary>
+            Gets a list of all Customers.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.CustomersController.GetCustomer(System.Guid)">
+            <summary>
+            Gets a single Customer by ID.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.CustomersController.AddCustomer(TappManagement.Domain.Customers.Dtos.CustomerForCreationDto)">
+            <summary>
+            Creates a new Customer record.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.CustomersController.UpdateCustomer(System.Guid,TappManagement.Domain.Customers.Dtos.CustomerForUpdateDto)">
+            <summary>
+            Updates an entire existing Customer.
+            </summary>
+        </member>
+        <member name="M:TappManagement.Controllers.v1.CustomersController.DeleteCustomer(System.Guid)">
+            <summary>
+            Deletes an existing Customer record.
+            </summary>
+        </member>
         <member name="M:TappManagement.Controllers.v1.UsersController.GetUsers(TappManagement.Domain.Users.Dtos.UserParametersDto)">
             <summary>
             Gets a list of all Users.
@@ -92,6 +117,11 @@
         <member name="M:TappManagement.Databases.EntityConfigurations.AppointmentConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{TappManagement.Domain.Appointments.Appointment})">
             <summary>
             The database configuration for Appointments. 
+            </summary>
+        </member>
+        <member name="M:TappManagement.Databases.EntityConfigurations.CustomerConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{TappManagement.Domain.Customers.Customer})">
+            <summary>
+            The database configuration for Customers. 
             </summary>
         </member>
         <member name="M:TappManagement.Databases.EntityConfigurations.UserConfiguration.Configure(Microsoft.EntityFrameworkCore.Metadata.Builders.EntityTypeBuilder{TappManagement.Domain.Users.User})">
@@ -168,6 +198,30 @@
             <inheritdoc />
         </member>
         <member name="M:TappManagement.Migrations._3ndMigration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TappManagement.Migrations._230423Migration">
+            <inheritdoc />
+        </member>
+        <member name="M:TappManagement.Migrations._230423Migration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TappManagement.Migrations._230423Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TappManagement.Migrations._230423Migration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="T:TappManagement.Migrations._2304232Migration">
+            <inheritdoc />
+        </member>
+        <member name="M:TappManagement.Migrations._2304232Migration.Up(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TappManagement.Migrations._2304232Migration.Down(Microsoft.EntityFrameworkCore.Migrations.MigrationBuilder)">
+            <inheritdoc />
+        </member>
+        <member name="M:TappManagement.Migrations._2304232Migration.BuildTargetModel(Microsoft.EntityFrameworkCore.ModelBuilder)">
             <inheritdoc />
         </member>
     </members>

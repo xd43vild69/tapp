@@ -14,6 +14,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore.Query;
 using TappManagement.Domain.Admins;
+using TappManagement.Domain.Customers;
 
 public sealed class TappDbContext : DbContext
 {
@@ -37,6 +38,7 @@ public sealed class TappDbContext : DbContext
     public DbSet<User> Users { get; set; }
     public DbSet<Appointment> Appointments { get; set; }
     public DbSet<Admin> Admins { get; set; }
+    public DbSet<Customer> Customers { get; set; }
     #endregion DbSet Region - Do Not Delete
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -63,6 +65,7 @@ public sealed class TappDbContext : DbContext
         modelBuilder.ApplyConfiguration(new UserConfiguration());
         modelBuilder.ApplyConfiguration(new AppointmentConfiguration());
         modelBuilder.ApplyConfiguration(new AdminConfiguration());
+        modelBuilder.ApplyConfiguration(new CustomerConfiguration());
         #endregion Entity Database Config Region - Only delete if you don't want to automatically add configurations
     }
 

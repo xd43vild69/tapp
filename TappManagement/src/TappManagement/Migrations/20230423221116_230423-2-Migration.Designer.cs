@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TappManagement.Databases;
 
@@ -11,9 +12,11 @@ using TappManagement.Databases;
 namespace TappManagement.Migrations
 {
     [DbContext(typeof(TappDbContext))]
-    partial class TappDbContextModelSnapshot : ModelSnapshot
+    [Migration("20230423221116_230423-2-Migration")]
+    partial class _2304232Migration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
